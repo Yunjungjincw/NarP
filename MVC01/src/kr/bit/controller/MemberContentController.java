@@ -33,6 +33,8 @@ public class MemberContentController extends HttpServlet {
 		out.println(" <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>");
 		out.println("</head>");
 		out.println("<body>");
+		out.println("<form action='/MVC01/memberUpdate.do' method='post'>");
+		out.println("<input type='hidden' name='num' value='"+vo.getNum()+"'/>");
 		out.println("<table class='table table-bordered'>");
 		if(vo!=null) {
 			out.println("<tr>");
@@ -71,7 +73,15 @@ public class MemberContentController extends HttpServlet {
 			out.println("<td>일치하는 회원이 없습니다.</td>");
 			out.println("</tr>");
 		}
+		out.println("<tr>");
+		out.println("<td colspan='2' align='center'>");
+		out.println("<input type='submit' value='수정하기' class='btn btn-primary'/>");
+		out.println("<input type='reset' value='취소' class='btn btn-warning' />");
+		out.println("<a href='/MVC01/memberList.do'>리스트</a>");
+		out.println("</td>");
+		out.println("</tr>");
 		out.println("</table>");
+		out.println("</form>");
 		out.println("</body>");
 		out.println("</html>");
 	}
