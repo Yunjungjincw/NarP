@@ -42,7 +42,7 @@ public class MemberUpdateController extends HttpServlet {
 			response.sendRedirect("/MVC01/memberList.do");
 		}else {
 			//가입살패 -> 예외 객체를 만들어서 WAS에 던지기
-			throw new ServletException("not insert");
+			throw new ServletException("not update");
 		}
 		
 		
